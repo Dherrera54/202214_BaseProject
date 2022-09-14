@@ -11,7 +11,7 @@ export class ClubEntity {
     establishedDate: Date;
     @Column()
     image: string;
-    @Column()
+    @Column({length: 100})
     description: string;
 
     @ManyToMany(() => MemberEntity, (member) => member.clubs)    

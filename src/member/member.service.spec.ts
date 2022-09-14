@@ -60,7 +60,7 @@ describe('MemberService', () => {
   });
 
   it('create should return a new member', async () => {
-    const museum: MemberEntity = {
+    const member: MemberEntity = {
       id: "",
       name: faker.company.name(),
       email: faker.internet.email(),
@@ -68,7 +68,7 @@ describe('MemberService', () => {
       clubs: []
     }
  
-    const newMemeber: MemberEntity = await service.create(museum);
+    const newMemeber: MemberEntity = await service.create(member);
     expect(newMemeber).not.toBeNull();
  
     const storedMemeber: MemberEntity = await repository.findOne({where: {id: newMemeber.id}})
