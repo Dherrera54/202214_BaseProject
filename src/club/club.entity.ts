@@ -8,12 +8,12 @@ export class ClubEntity {
     @Column()
     name: string;  
     @Column()
-    establishdate: Date;
+    establishedDate: Date;
     @Column()
     image: string;
     @Column()
     description: string;
 
     @ManyToMany(() => MemberEntity, (member) => member.clubs)    
-    members: MemberEntity[];
+    members?: MemberEntity[];
 }

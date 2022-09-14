@@ -12,10 +12,10 @@ export class MemberEntity {
     @Column()
     email: string;
     @Column()
-    birthdate: Date;
+    birthDate: Date;
 
    @ManyToMany(() => ClubEntity, (club) => club.members)
    @JoinTable()
-   clubs: ClubEntity[];
+   clubs?: ClubEntity[];
 
 }
