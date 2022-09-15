@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToMany,JoinTable } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
 import { ClubEntity } from '../club/club.entity';
 
 
@@ -15,7 +15,6 @@ export class MemberEntity {
     birthDate: Date;
 
    @ManyToMany(() => ClubEntity, (club) => club.members)
-   @JoinTable()
    clubs?: ClubEntity[];
 
 }

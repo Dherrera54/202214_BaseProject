@@ -6,6 +6,8 @@ import { ClubModule } from './club/club.module';
 import { MemberModule } from './member/member.module';
 import { MemberEntity } from './member/member.entity';
 import { ClubEntity } from './club/club.entity';
+import { ClubMemberModule } from './club-member/club-member.module';
+
 
 @Module({
   imports: [ClubModule, MemberModule,
@@ -21,6 +23,8 @@ import { ClubEntity } from './club/club.entity';
       synchronize: true,
       keepConnectionAlive: true
     }),
+    ClubMemberModule,
+  
   ],
   controllers: [AppController],
   providers: [AppService],
