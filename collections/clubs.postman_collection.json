@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "0f85eb22-7a03-4f5d-aee9-f99701070035",
+		"name": "clubs",
+		"description": "Clus api documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15420669"
+	},
+	"item": [
+		{
+			"name": "Add a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"club_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Hellfire\",\n    \"establishedDate\":\"1966-06-06 19:10:25-07\",\n    \"image\":\"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\":\"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a club",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/html",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Hellfire\",\n    \"establishedDate\":\"1966-06-06 19:10:25-07\",\n    \"image\":\"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\":\"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\"\n}",
+							"options": {
+								"raw": {
+									"language": "html"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								""
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"name\": \"Hellfire\",\n    \"establishedDate\": \"1966-06-06 19:10:25-07\",\n    \"image\": \"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\": \"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\",\n    \"id\": \"ae552f70-054f-4e2f-a778-c23d636ae099\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Status code is 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Hellfire\",\n    \"establishedDate\":\"1966-06-06 19:10:25-07\",\n    \"image\":\"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\":\"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an invalid club",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Hellfire\",\n    \"establishedDate\":\"1966-06-06 19:10:25-07\",\n    \"image\":\"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\":\"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								""
+							]
+						}
+					},
+					"code": 412,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"The club description is over 100 characters\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all clubs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of clubs > ' + 0, function () {",
+							"   var data = pm.response.json()",
+							"   pm.expect(data.length).to.greaterThan(0)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all clubs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								""
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"40a01154-5b7d-4084-9165-27f014dd8115\",\n        \"name\": \"Hellfire\",\n        \"establishedDate\": \"1966-06-07T02:10:25.000Z\",\n        \"image\": \"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n        \"description\": \"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\",\n        \"members\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a club by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get an invalid clubs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "\n    {\n        \"id\": \"40a01154-5b7d-4084-9165-27f014dd8115\",\n        \"name\": \"Hellfire\",\n        \"establishedDate\": \"1966-06-07T02:10:25.000Z\",\n        \"image\": \"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n        \"description\": \"El Club Fuego Infernal, es una sociedad  que aparece en los cómics publicados por Marvel Comics.\",\n        \"members\": []\n    }\n"
+				}
+			]
+		},
+		{
+			"name": "Get an invalid club by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"The club with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get an invalid club",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The club with the given id was not found\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Update a club by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Hellfire\",\n    \"establishedDate\":\"1966-06-06 19:10:25-07\",\n    \"image\":\"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\":\"New description\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update a club by Id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"e007a679-596a-48ef-94a2-fc1cd9c3d2a1\",\n    \"name\": \"Hellfire\",\n    \"establishedDate\": \"1966-06-06 19:10:25-07\",\n    \"image\": \"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\": \"New description\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an invalid club by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"The club with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Hellfire\",\n    \"establishedDate\":\"1966-06-06 19:10:25-07\",\n    \"image\":\"https://static.wikia.nocookie.net/strangerthings8338/images/6/62/The_Hellfire_Club.jpg/revision/latest?cb=20201106175347\",\n    \"description\":\"New description\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an invalid club by Id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The club with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete club by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete club by Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid club by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"The club with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid club by Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}
