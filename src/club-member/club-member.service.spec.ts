@@ -64,6 +64,7 @@ describe('ClubMemberService', () => {
       name: faker.company.name(),
       email: faker.internet.email(),
       birthDate: faker.date.birthdate(),
+      clubs:[]
     });
  
     const newClub: ClubEntity = await clubRepository.save({
@@ -127,6 +128,7 @@ describe('ClubMemberService', () => {
       name: faker.company.name(),
       email: faker.internet.email(),
       birthDate: faker.date.birthdate(),
+      clubs:[]
     });
  
     await expect(()=> service.findMemberFromClubIdByMemberId(club.id, newMember.id)).rejects.toHaveProperty("message", "The member with the given id is not associated to the club");
@@ -146,6 +148,7 @@ describe('ClubMemberService', () => {
       name: faker.company.name(),
       email: faker.internet.email(),
       birthDate: faker.date.birthdate(),
+      clubs:[]
     });
  
     const updatedClub: ClubEntity = await service.updateMembersFromClub(club.id, [newMember]);
@@ -161,6 +164,7 @@ describe('ClubMemberService', () => {
       name: faker.company.name(),
       email: faker.internet.email(),
       birthDate: faker.date.birthdate(),
+      clubs:[]
     });
  
     await expect(()=> service.updateMembersFromClub("0", [newMember])).rejects.toHaveProperty("message", "The club with the given id was not found");
@@ -199,6 +203,7 @@ describe('ClubMemberService', () => {
       name: faker.company.name(),
       email: faker.internet.email(),
       birthDate: faker.date.birthdate(),
+      clubs:[]
     });
  
     await expect(()=> service.deleteMemberFromClub(club.id, newMember.id)).rejects.toHaveProperty("message", "The member with the given id is not associated to the club");
